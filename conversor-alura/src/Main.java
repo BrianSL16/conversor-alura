@@ -3,21 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-       ConsultCurrency consult = new ConsultCurrency();
-
-
-       Currency currency = consult.searchCurrency("USD");
-
-
-       System.out.println(currency);
 
         Scanner scanner = new Scanner(System.in);
 
-
+        Conversion conversion = new Conversion();
 
         int option = 1;
+        double entryValue = 0;
 
-        while(option > 0 && option < 6){
+        while(option > 0 && option < 7){
+
 
 
             System.out.println("******************************************************");
@@ -37,15 +32,21 @@ public class Main {
 
             option = scanner.nextInt();
 
-            System.out.println("Su opcion es: " + option);
+            if(option > 0 && option < 7 ){
+                System.out.println("Ingrese el valor que desea convertir: ");
+                entryValue = scanner.nextDouble();
 
 
-            
+                System.out.println(conversion.generateConversion(option, entryValue));
+
+            }
+
+
+
 
 
 
         }
-
 
 
 
